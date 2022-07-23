@@ -4,13 +4,15 @@
   "main": "build/index.js",
   "scripts": {
     "start": "tsc && functions-framework --target=$TARGET --port=$PORT",
-    "build": "tsc"
+    "build": "tsc",
+    "test": "jest ./src/test"
   },
   "dependencies": {
     "@google-cloud/functions-framework": "^3.1.2",
     "@google-cloud/storage": "^6.2.3"
   },
   "devDependencies": {
+    "@types/jest": "^28.1.6",
     "@types/node": "^18.0.6",
     "@typescript-eslint/eslint-plugin": "^5.18.0",
     "@typescript-eslint/parser": "^5.18.0",
@@ -23,6 +25,7 @@
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.29.4",
     "eslint-plugin-react-hooks": "^4.4.0",
+    "jest": "^28.1.3",
     "typescript": "^4.7.4"
   }
 }
