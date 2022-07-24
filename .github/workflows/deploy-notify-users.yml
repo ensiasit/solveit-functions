@@ -40,3 +40,5 @@ jobs:
           entry_point: "notifyUsers"
           region: "europe-west2"
           runtime: "nodejs16"
+          event_trigger_type: "google.storage.object.finalize"
+          event_trigger_resource: "solveit-problems"
