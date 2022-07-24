@@ -2,12 +2,14 @@ name: "Deploy list-problems function"
 
 on:
   push:
-    tags:
-      - "list-problems"
+    branches:
+      - "master"
 
 jobs:
   build:
     runs-on: "ubuntu-latest"
+    
+    if: "contains(github.event.head_commit.message, 'list-problems')"
 
     steps:
       - uses: "actions/checkout@v3"
