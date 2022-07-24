@@ -1,6 +1,6 @@
 import nodemailer from "nodemailer";
 import { Storage } from "@google-cloud/storage";
-import { readJsonFileContent } from "./util/file.helper";
+import { readJsonFileContent } from "../util/file.helper";
 
 const sendEmails = async (emails: string[]) => {
   const transporter = nodemailer.createTransport({

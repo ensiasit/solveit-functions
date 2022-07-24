@@ -4,9 +4,9 @@ import {
   Request,
   Response,
 } from "@google-cloud/functions-framework";
-import { readJsonFileContent } from "./util/file.helper";
-import { ProblemDto } from "./util/models";
-import { setCors } from "./util/cors.helper";
+import { readJsonFileContent } from "../util/file.helper";
+import { ProblemDto } from "../util/models";
+import { setCors } from "../util/cors.helper";
 
 const listProblems: HttpFunction = async (req: Request, res: Response) => {
   const shouldReturn = setCors(req, res);

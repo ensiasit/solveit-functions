@@ -1,10 +1,10 @@
 {
   "name": "functions",
   "version": "1.0.0",
-  "main": "build/index.js",
+  "main": "build/main/index.js",
   "scripts": {
-    "start": "tsc && functions-framework --target=$TARGET --port=$PORT",
-    "build": "tsc",
+    "start": "rm -rf ./build && tsc && functions-framework --target=$TARGET --port=$PORT",
+    "build": "rm -rf ./build && tsc",
     "test": "jest ./src/test"
   },
   "dependencies": {

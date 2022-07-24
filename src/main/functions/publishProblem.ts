@@ -4,7 +4,7 @@ import {
   Request,
   Response,
 } from "@google-cloud/functions-framework";
-import { setCors } from "./util/cors.helper";
+import { setCors } from "../util/cors.helper";
 
 const publishProblem: HttpFunction = async (req: Request, res: Response) => {
   const shouldReturn = setCors(req, res);

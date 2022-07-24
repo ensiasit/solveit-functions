@@ -4,8 +4,8 @@ import {
   Request,
   Response,
 } from "@google-cloud/functions-framework";
-import { readJsonFileContent } from "./util/file.helper";
-import { setCors } from "./util/cors.helper";
+import { readJsonFileContent } from "../util/file.helper";
+import { setCors } from "../util/cors.helper";
 
 const subscribeUser: HttpFunction = async (req: Request, res: Response) => {
   const shouldReturn = setCors(req, res);
