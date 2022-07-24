@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "build/main/index.js",
   "scripts": {
-    "start": "rm -rf ./build && tsc && functions-framework --target=$TARGET --port=$PORT",
+    "start": "rm -rf ./build && tsc && functions-framework --target=$TARGET --port=$PORT --signature-type=$SIGNATURE_TYPE",
     "build": "rm -rf ./build && tsc",
     "test": "jest ./src/test"
   },
