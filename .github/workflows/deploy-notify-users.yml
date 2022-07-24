@@ -1,0 +1,42 @@
+name: "Deploy notify-users function"
+
+on:
+  push:
+    branches:
+      - "master"
+
+jobs:
+  build:
+    runs-on: "ubuntu-latest"
+    
+    if: "contains(github.event.head_commit.message, 'notify-users')"
+
+    steps:
+      - uses: "actions/checkout@v3"
+      
+      - uses: "actions/setup-node@v3"
+        with:
+          node-version: "16.x"
+
+      - id: "install"
+        run: npm ci
+        
+      - id: "test"
+        run: npm run test
+        
+      - id: "build"
+        run: npm run build
+
+      - id: "authenticate"
+        uses: "google-github-actions/auth@v0"
+        with:
+          service_account: "solveit-357020@appspot.gserviceaccount.com"
+          credentials_json: ${{ secrets.GCP_CREDENTIALS_JSON }}
+
+      - id: "deploy"
+        uses: "google-github-actions/deploy-cloud-functions@v0"
+        with:
+          name: "notify-users"
+          entry_point: "notifyUsers"
+          region: "europe-west2"
+          runtime: "nodejs16"
