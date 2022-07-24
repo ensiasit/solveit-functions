@@ -41,4 +41,4 @@ jobs:
           region: "europe-west2"
           runtime: "nodejs16"
           event_trigger_type: "google.storage.object.finalize"
-          event_trigger_resource: "solveit-problems"
+          event_trigger_resource: "projects/solveit-357020/buckets/solveit-problems"
